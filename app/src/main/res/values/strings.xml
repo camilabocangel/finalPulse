@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">Pulse</string>
+    <string name="HOLA">HOLA</string>
+    <string name="BIENVENIDO">BIENVENIDO!</string>
+    <string name="USUARIO">Nombres</string>
+    <string name="tv_nombres"> -- </string>
+    <string name="EDADUSUARIO">Edad</string>
+    <string name="btn_ActualizarInfo">Editar</string>
+    <string name="btn_historial_usuarioPerfil">Historial</string>
+    <string name="btn_cerrarsesion_usuarioPerfil">Cerrar Sesion</string>
+    <string name="EMAIL">Email</string>
+    <string name="CONTRASENA">Contraseña</string>
+    <string name="CONFIRCONTRASENA">Confirmar contraseña</string>
+    <string name="LOGIN">Login</string>
+    <string name="NOTIENESCUENTA">¿No tienes una cuenta?</string>
+    <string name="CREARCUENTA">CREAR CUENTA</string>
+    <string name="EMAIlREGISTRO">Correo electrónico</string>
+    <string name="registroCuenta">Registrar</string>
+    <string name="SIGUIENTE">Siguiente</string>
+    <string name="INGRESARDATOS">INGRESA TUS DATOS</string>
+    <string name="FECHADENACIMIENTO">Fecha de nacimiento (DD/MM/AA)</string>
+    <string name="ALTURA">Altura (m)</string>
+    <string name="tv_altura"> -- </string>
+    <string name="PESO">Peso (kg)</string>
+    <string name="tv_peso"> -- </string>
+
+
+    <string name="QUEENTRENARASMUSCULO">¿QUÉ ENTRENARÁS HOY?</string>
+    <string name="BICEPS">Biceps</string>
+    <string name="TRICEPS">Triceps</string>
+    <string name="ESPALDA">Espalda</string>
+    <string name="PECHO">Pecho</string>
+    <string name="FEMORAL">Femoral</string>
+    <string name="CUADRICEPS">Cuádriceps</string>
+
+    <string name="ELECCIONEJERCICIOS">Escoge tus ejercicios favoritos!</string>
+    <string name="CURLBARRA">Curl con barra</string>
+    <string name="CURLMARTILLO">Curl martillo</string>
+    <string name="CURLPREDICADOR">Curl predicador</string>
+    <string name="CURLINVERSO">Curl inverso</string>
+    <string name="CURLCONCENTRADO">Curl concentrado</string>
+    <string name="CURLINCLINADO">Curl inclinado</string>
+    <string name="DOMINADASSUPINAS">Dominadas supinas</string>
+
+    <string name="COMIENZA">¡COMIENZA!</string>
+    <string name="AUMENTOPESO">+</string>
+    <string name="REDUZCOPESO">-</string>
+    <string name="FELICIDADES">¡FELICIDADES!</string>
+    <string name="FRASEFELICIDADES">¡Acabaste con éxito tu entrenamiento!</string>
+    <string name="CANCELAR">Cancelar</string>
+
+    <string name="COMIENZAPANTALLAINICIO">¡Comienza tus rutinas ya!</string>
+    <string name="SINTIEMPO">¿SIN TIEMPO?</string>
+    <string name="RUTINAPREDETERMINADA">¡Hecha un vistazo a las rutinas predeterminadas que tenemos para ti!</string>
+    <string name="MUCHAENERGIA">¿MUCHA ENERGÍA?</string>
+    <string name="CREATUSPROPIASRUTINAS">¡Crea tus propias rutinas! Disfruta tu entrenamiento personalizado</string>
+    <string name="NECESITASMOTIVACION">¿NECESITAS MOTIVACIÓN?</string>
+    <string name="VIDEOSMOTIVACIONALES">¡Hecha un vistazo a los videos que tenemos para ti o sube los tuyos!</string>
+    <string name="PERFILPANTALLAINICIO">PERFIL</string>
+    <string name="GALERIAPANTALLAINICIO">GALERÍA</string>
+    <string name="SUBE_TU_FOTO">SUBE TU FOTO</string>
+    <string name="HISTORIAL">HISTORIAL</string>
+    <string name="PERSONALIZAICONO">PERSONALIZA</string>
+    <string name="PREDETERMINADASICONO">PREDETERMINADAS</string>
+    <string name="VIDEOICONO">VIDEOS</string>
+    <string name="GALERIABANNER">MIDE TU PROGRESO</string>
+    <string name="MIDETUPROGRESO">Accede a nuestra gelería y comienza a sacarte fotos</string>
+
+    <string name="PREDETERMINADOS">EJERCICIOS PREDETERMINADOS</string>
+    <string name="FECHA">FECHA</string>
+    <string name="MUSCULOS">MUSCULOS</string>
+    <string name="EJERCICIOHISTORIAL">Ejercicio</string>
+    <string name="PESOHISTORIAL">Peso</string>
+    <string name="Txt_titulo_edit">Editar informacion</string>
+    <string name="btn_Actualizar">Actualizar</string>
+    <string name="DATOCURISO">DATO</string>
+
+    <string name="etTituloVideo">Titulo del video</string>
+    <string name="btnSelectVideo">Seleccionar video</string>
+    <string name="btnSubirVideo">Subir Video</string>
+    <string name="txtEstado">No se ha seleccionado un video</string>
+    <string name="tvTituloVideo">Titulo del video</string>
+    <string name="tvAutorVideo">Autor del video</string>
+    <string name="tvFechaSubida">dd/MM/yyyy hh:mm</string>
+
+    <string name="Musculo1">Pecho y Biceps </string>
+    <string name="Musculo2">Espalda y Femoral </string>
+    <string name="Musculo3">Triceps y Cuadriceps </string>
+    <string name="Rutina1">
+        Crossover bicep polea
+        Curl inverso
+        Curl martillo
+        Press con barra
+        Press inclinado
+        Pushups
+    </string>
+    <string name="Rutina2">
+        Jalón al pecho
+        Pushdown
+        Remo con barra t
+        Femoral sentado
+        Hiperextensiones
+        Peso muerto
+    </string>
+    <string name="Rutina3">
+        Fondos en paralelas
+        Copa con mancuernas
+        Pushdown con cuerda
+        Lounges estáticos
+        Prensa de piernas
+        Búlgaras
+    </string>
+
+    <string name="tomar_foto">Subir Foto</string>
+    <string name="seleccionar_foto">Galeria</string>
+
+</resources>

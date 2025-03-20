@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityRegistrarDatos"
+    android:background="@drawable/fondo_login">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/ingresaTusDatos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/INGRESARDATOS"
+            android:textSize="30sp"
+            android:textColor="@color/verde"
+            android:fontFamily="@font/lato_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="130dp">
+        </TextView>
+
+        <EditText
+            android:id="@+id/alturaRegistro"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/ALTURA"
+            android:inputType="numberDecimal"
+            android:textSize="22sp"
+            android:textColorHint="@color/blancoClaro"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/verdeClaro"
+            android:fontFamily="@font/lato_regular"
+            app:layout_constraintTop_toBottomOf="@id/ingresaTusDatos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30sp">
+        </EditText>
+        <EditText
+            android:id="@+id/pesoRegistro"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/PESO"
+            android:inputType="numberDecimal"
+            android:textSize="22sp"
+            android:textColorHint="@color/blancoClaro"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/verdeClaro"
+            android:fontFamily="@font/lato_regular"
+            app:layout_constraintTop_toBottomOf="@id/alturaRegistro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30sp">
+        </EditText>
+
+        <Button
+            android:id="@+id/siguienteAElecMusculos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SIGUIENTE"
+            android:backgroundTint="@color/verde"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/pesoRegistro"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="@id/pesoRegistro">
+        </Button>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

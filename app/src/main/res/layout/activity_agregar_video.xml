@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/black"
+    tools:context=".ActivityAgregarVideo">
+
+
+    <ImageView
+        android:id="@+id/IbRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/flecha_atras"
+        android:background="@android:color/transparent"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TILTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/IbRegresar"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/etTituloVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/verde"
+            android:textColorHint="@color/verde"
+            android:textColor="@color/verde"
+            android:hint="@string/etTituloVideo"
+            android:inputType="text|textCapSentences" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/TILTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:id="@+id/txtEstado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/txtEstado"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/videoView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSelectVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnSelectVideo"
+        android:fontFamily="@font/lato_bold"
+        android:textSize="15sp"
+        android:textAllCaps="true"
+        app:cornerRadius="8dp"
+        android:alpha="0.7"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/verde"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/txtEstado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSubitVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnSubirVideo"
+        android:backgroundTint="@color/verde"
+        android:textColor="@color/black"
+        android:fontFamily="@font/lato_bold"
+        android:alpha="0.7"
+        android:textAllCaps="true"
+        app:cornerRadius="8dp"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSelectVideo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/btnSubitVideo"
+        app:layout_constraintBottom_toBottomOf="@id/btnSubitVideo"
+        app:layout_constraintStart_toStartOf="@id/btnSubitVideo"
+        app:layout_constraintEnd_toEndOf="@id/btnSubitVideo"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/black"
+        android:textSize="15sp">
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

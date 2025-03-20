@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainEleccionMusculo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityEleccionMusculos">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conselecmusc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/botonAtrasARegistro"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/flecha_atras"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tituloEleccionMusculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/QUEENTRENARASMUSCULO"
+            android:textColor="@color/verde"
+            android:textSize="35sp"
+            app:layout_constraintStart_toStartOf="@id/botonAtrasARegistro"
+            app:layout_constraintTop_toBottomOf="@id/botonAtrasARegistro">
+
+        </TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_musculos"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:padding="0dp"
+            app:layout_constraintEnd_toEndOf="@id/conselecmusc"
+            app:layout_constraintStart_toStartOf="@id/conselecmusc"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/siguienteAElecEjercicios"
+            app:layout_constraintTop_toBottomOf="@id/tituloEleccionMusculo"
+            tools:listitem="@layout/check_musculo">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/siguienteAElecEjercicios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+
+            android:backgroundTint="@color/verde"
+            android:text="@string/SIGUIENTE"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30sp">
+
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
