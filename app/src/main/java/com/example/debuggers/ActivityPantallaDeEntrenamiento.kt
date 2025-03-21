@@ -1,13 +1,8 @@
 package com.example.debuggers
 
-import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +11,7 @@ import com.example.debuggers.databinding.ActivityPantallaDeEntrenamientoBinding
 import com.example.debuggers.model.Ejercicio
 import com.example.debuggers.Helper.DatabaseHelper
 import com.example.debuggers.Helper.Musculo
+import com.example.debuggers.PatronEleccionEjercicios.view.ActivityEleccionEjercicios
 
 class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
     private lateinit var binding: ActivityPantallaDeEntrenamientoBinding

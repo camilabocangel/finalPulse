@@ -64,4 +64,7 @@ dependencies {
     implementation ("androidx.core:core-splashscreen:1.0.0-rc01")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
+
 }
