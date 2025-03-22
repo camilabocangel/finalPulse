@@ -56,7 +56,7 @@
             android:name=".ActivityPantallaDeEntrenamiento"
             android:exported="false" />
         <activity
-            android:name=".ActivityEleccionEjercicios"
+            android:name=".PatronEleccionEjercicios.view.ActivityEleccionEjercicios"
             android:exported="false" />
         <activity
             android:name=".ActivityEleccionMusculos"

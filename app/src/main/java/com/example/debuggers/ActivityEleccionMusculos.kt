@@ -2,12 +2,12 @@ package com.example.debuggers
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.debuggers.Helper.DatabaseHelper
 import com.example.debuggers.Helper.Musculo
 import com.example.debuggers.Helper.MusculosAdapter
+import com.example.debuggers.PatronEleccionEjercicios.view.ActivityEleccionEjercicios
 import com.example.debuggers.databinding.ActivityEleccionMusculosBinding
 import java.util.ArrayList
 
