@@ -2,21 +2,12 @@ package com.example.debuggers
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.debuggers.PantallaDeEntrenamientoAdapter.PredeterminadosEjerciciosAdapter
 import com.example.debuggers.databinding.ActivityEjerciciosPredeterminadosBinding
-import com.example.debuggers.databinding.ActivityEleccionEjerciciosBinding
-import com.example.debuggers.dataclasses.ejercicios
-import com.example.debuggers.dataclasses.ejerciciosPredeterminados
 import com.example.debuggers.model.Ejercicio
 import com.example.debuggers.model.EjercicioFactory
 
 class ActivityEjerciciosPredeterminados : AppCompatActivity() {
-
     private lateinit var binding: ActivityEjerciciosPredeterminadosBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,36 +15,22 @@ class ActivityEjerciciosPredeterminados : AppCompatActivity() {
         binding = ActivityEjerciciosPredeterminadosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Creación de rutinas con el Factory
-        val rutina1 = EjercicioFactory.createRutina1()
-        val rutina2 = EjercicioFactory.createRutina2()
-        val rutina3 = EjercicioFactory.createRutina3()
+        // Definir las rutinas
+        val rutina1 = EjercicioFactory.crearRutina(1)
+        val rutina2 = EjercicioFactory.crearRutina(2)
+        val rutina3 = EjercicioFactory.crearRutina(3)
 
-        // Configuración de los botones para pasar las rutinas seleccionadas
-        binding.check1.setOnClickListener {
-            val intentEntrenamiento = Intent(this, ActivityPantallaDeEntrenamiento::class.java)
-            intentEntrenamiento.putParcelableArrayListExtra("ejerciciosSeleccionados", ArrayList(rutina1))
-            intentEntrenamiento.putExtra("actividad_origen", "ActivityEjerciciosPredeterminados")
-            startActivity(intentEntrenamiento)
-        }
+        // Eventos de los botones para seleccionar rutinas
+        binding.check1.setOnClickListener { iniciarEntrenamiento(rutina1) }
+        binding.check2.setOnClickListener { iniciarEntrenamiento(rutina2) }
+        binding.check3.setOnClickListener { iniciarEntrenamiento(rutina3) }
+    }
 
-        binding.check2.setOnClickListener {
-            val intentEntrenamiento = Intent(this, ActivityPantallaDeEntrenamiento::class.java)
-            intentEntrenamiento.putParcelableArrayListExtra("ejerciciosSeleccionados", ArrayList(rutina2))
-            intentEntrenamiento.putExtra("actividad_origen", "ActivityEjerciciosPredeterminados")
-            startActivity(intentEntrenamiento)
-        }
-
-        binding.check3.setOnClickListener {
-            val intentEntrenamiento = Intent(this, ActivityPantallaDeEntrenamiento::class.java)
-            intentEntrenamiento.putParcelableArrayListExtra("ejerciciosSeleccionados", ArrayList(rutina3))
-            intentEntrenamiento.putExtra("actividad_origen", "ActivityEjerciciosPredeterminados")
-            startActivity(intentEntrenamiento)
-        }
-
-        binding.Button2.setOnClickListener {
-            val intentAtrasEjPred = Intent(this, ActivityPantallaInicio::class.java)
-            startActivity(intentAtrasEjPred)
-        }
+    private fun iniciarEntrenamiento(rutina: List<Ejercicio>) {
+        // Crear un intent y pasar la lista de ejercicios seleccionados
+        val intentEntrenamiento = Intent(this, ActivityPantallaDeEntrenamiento::class.java)
+        intentEntrenamiento.putParcelableArrayListExtra("ejerciciosSeleccionados", ArrayList(rutina))
+        intentEntrenamiento.putExtra("actividad_origen", "ActivityEjerciciosPredeterminados")
+        startActivity(intentEntrenamiento)
     }
 }

@@ -28,20 +28,21 @@ class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
         recyclerEntrenamiento = findViewById(R.id.recyclerEntrenamiento)
         dbHelper = DatabaseHelper.getInstance(this)
 
-        // Recupera datos del Intent
+        // Recupera los datos del Intent
         var ejerciciosSeleccionados: List<Ejercicio> =
             intent.getParcelableArrayListExtra("ejerciciosSeleccionados") ?: emptyList()
         musculosSeleccionados = intent.getParcelableArrayListExtra("musculosSeleccionados")
 
         Log.d("ActivityPantallaDeEntrenamiento", "Ejercicios seleccionados: $ejerciciosSeleccionados")
 
-        entrenamientoAdapter = PantallaDeEntrenamientoAdapter(this, ejerciciosSeleccionados) {
-            ejerciciosSeleccionados = it
+        // Configura el adaptador y el RecyclerView
+        entrenamientoAdapter = PantallaDeEntrenamientoAdapter(this, ejerciciosSeleccionados) { selectedExercises ->
+            ejerciciosSeleccionados = selectedExercises
         }
-        recyclerEntrenamiento.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
+        recyclerEntrenamiento.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerEntrenamiento.adapter = entrenamientoAdapter
 
-        // Configura botones
+        // Configura los botones
         binding.siguienteAFelicidades.setOnClickListener {
             dbHelper.insertRutina(ejerciciosSeleccionados)
             val intentFelicidades = Intent(this, ActivityFelicidades::class.java)
@@ -53,21 +54,15 @@ class ActivityPantallaDeEntrenamiento : AppCompatActivity() {
             val intentAtrasEjercicio = when (actividadOrigen) {
                 "ActivityEleccionEjercicios" -> {
                     Intent(this, ActivityEleccionEjercicios::class.java).apply {
-                        putParcelableArrayListExtra("musculosSeleccionados", ArrayList(intent.getParcelableArrayListExtra("musculosSeleccionados")))
+                        putParcelableArrayListExtra("musculosSeleccionados", ArrayList(musculosSeleccionados))
                     }
                 }
                 "ActivityEjerciciosPredeterminados" -> {
                     Intent(this, ActivityEjerciciosPredeterminados::class.java)
                 }
-                else -> {
-                    null
-                }
+                else -> null
             }
             intentAtrasEjercicio?.let { startActivity(it) } // Si el intent no es nulo, inicia la actividad
         }
     }
 }
-
-//Intent(this, ActivityEleccionEjercicios::class.java)
-  //          intentAtrasEjercicio.putParcelableArrayListExtra("musculosSeleccionados", ArrayList(musculosSeleccionados))
-    //        startActivity(intentAtrasEjercicio)
