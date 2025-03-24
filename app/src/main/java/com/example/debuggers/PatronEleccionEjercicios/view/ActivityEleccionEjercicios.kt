@@ -4,19 +4,23 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.debuggers.databinding.ActivityEleccionEjerciciosBinding
 import androidx.recyclerview.widget.RecyclerView
+import com.example.debuggers.databinding.ActivityEleccionEjerciciosBinding
 import com.example.debuggers.ActivityEleccionMusculos
 import com.example.debuggers.ActivityPantallaDeEntrenamiento
 import com.example.debuggers.Helper.Musculo
 import com.example.debuggers.adapter.EjerciciosAdapter
 import com.example.debuggers.PatronEleccionEjercicios.controller.EjercicioController
+import com.example.debuggers.PatronEleccionEjercicios.model.EjercicioObservable
+import com.example.debuggers.PatronEleccionEjercicios.model.EjercicioObserver
 import com.example.debuggers.model.Ejercicio
 
-class ActivityEleccionEjercicios : AppCompatActivity() {
+class ActivityEleccionEjercicios : AppCompatActivity(), EjercicioObserver {
+
     private lateinit var binding: ActivityEleccionEjerciciosBinding
     private lateinit var recyclerEjercicios: RecyclerView
     private lateinit var ejercicioController: EjercicioController
+    private val ejercicioObservable = EjercicioObservable() // Instancia única y compartida
     private val selectedEjercicios = mutableListOf<Ejercicio>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,14 +29,15 @@ class ActivityEleccionEjercicios : AppCompatActivity() {
         setContentView(binding.root)
 
         recyclerEjercicios = binding.recyclerEjercicios
-        ejercicioController = EjercicioController(this)
+        ejercicioController = EjercicioController(this, ejercicioObservable) // Pasamos la misma instancia
+
+        ejercicioObservable.agregarObservador(this) // Nos registramos como observadores
 
         val selectedItems: List<Musculo>? = intent.getParcelableArrayListExtra("musculosSeleccionados")
         if (selectedItems != null) {
             val ejercicios = ejercicioController.obtenerEjercicios(selectedItems)
-            val ejerciciosAdapter = EjerciciosAdapter(this, ejercicios) {
-                selectedEjercicios.clear()
-                selectedEjercicios.addAll(it)
+            val ejerciciosAdapter = EjerciciosAdapter(this, ejercicios) { listaSeleccionada ->
+                listaSeleccionada.forEach { ejercicioController.seleccionarEjercicio(it) }
             }
             recyclerEjercicios.layoutManager = LinearLayoutManager(this)
             recyclerEjercicios.adapter = ejerciciosAdapter
@@ -51,4 +56,15 @@ class ActivityEleccionEjercicios : AppCompatActivity() {
             startActivity(intentAtrasMusculos)
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ejercicioObservable.eliminarObservador(this)
+    }
+
+    override fun onEjercicioSeleccionadoCambiado(ejercicios: List<Ejercicio>) {
+        selectedEjercicios.clear()
+        selectedEjercicios.addAll(ejercicios)
+    }
 }
+
