@@ -3,6 +3,7 @@ package com.example.debuggers
 import android.content.Intent
 import android.os.Bundle
 import android.view.Display.Mode
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -54,7 +55,7 @@ class ActivityPantallaVideos : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(this@ActivityPantallaVideos, "Error al cargar videos: ${error.message}", Toast.LENGTH_SHORT).show()
             }
 
         })
